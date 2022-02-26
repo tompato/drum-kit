@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.drums {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    &__drum {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 200px;
+        background-color: cornflowerblue;
+        color: navy;
+        cursor: pointer;
+        margin: 15px;
+        border-radius: 50%;
+        border: 5px solid navy;
+        transition: 0.1s all ease;
+        &--active {
+            background-color: navy;
+            color: white;
+            transform: scale(1.1);
+        }
+    }
+}
