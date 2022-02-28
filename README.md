@@ -17,4 +17,4 @@ TBC
 
 ### Credits
 * Sound files by 99sounds.org
-* Icons by WaveCC @ thenounproject__
+* Icons by WaveCC @ thenounproject
