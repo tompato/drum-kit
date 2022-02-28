@@ -1,31 +1,91 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
 .drums {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     &__drum {
+        position: relative;
         display: flex;
-        justify-content: center;
         align-items: center;
         width: 200px;
         height: 200px;
-        background-color: cornflowerblue;
+        background: cornflowerblue;
+        border-radius: 50%;
         color: navy;
         cursor: pointer;
         margin: 15px;
-        border-radius: 50%;
-        border: 5px solid navy;
-        transition: 0.1s all ease;
+        transform: translate3D(0, 0, 0);
+        &__content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            img {
+                width: 50%;
+                height: auto;
+                margin: 0 0 10px 0;
+            }
+            p {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                margin: 0;
+                span {
+                    font-size: 12px;
+                }
+            }
+        }
         &--active {
-            background-color: navy;
-            color: white;
-            transform: scale(1.1);
+            background-color: LightSeaGreen;
+            .animation__circle {
+                transition: 0.1s all ease;
+                transform: scale(1.1);
+                opacity: 1;
+            }
         }
     }
+}
+
+.animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    &__circle {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: LightSeaGreen;
+        z-index: -1;
+        opacity: 0;
+        transition: 0.1s all ease;
+        &:nth-of-type(1) {
+            transform-origin: (50%-3%) 50%;
+            animation: spin1 2s linear infinite;
+        }
+        &:nth-of-type(2) {
+            transform-origin: 50% (50%+3%);
+            animation: spin2 2s linear infinite;
+        }
+        &:nth-of-type(3) {
+            transform-origin: (50%+3%) 50%;
+            animation: spin3 2s linear infinite;
+        }
+    }
+}
+
+@keyframes spin1 {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes spin2 {
+    0% { transform: rotate(-144deg); }
+    100% { transform: rotate(216deg); }
+}
+
+@keyframes spin3 {
+    0% { transform: rotate(216deg); }
+    100% { transform: rotate(-144deg); }
 }
