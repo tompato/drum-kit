@@ -15,4 +15,6 @@ TBC
 * Javascript including classes, event listeners, audio files
 * CSS including animations, flexbox
 
-__Icons by WaveCC @ thenounproject__
+### Credits
+* Sound files by 99sounds.org
+* Icons by WaveCC @ thenounproject__
